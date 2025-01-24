@@ -23,7 +23,8 @@ pipeline {
         stage('Deploy Services') {
             steps {
                 script {
-                    sh 'docker run -d -p 4433:80 aakashgaur57/demoforjenkins'
+                    sh 'docker rm -f  myjenkinscon'
+                    sh 'docker run -d --name myjenkinscon -p 4422:80 aakashgaur57/demoforjenkins'
                 }
             }
         }
