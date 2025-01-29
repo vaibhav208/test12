@@ -33,7 +33,7 @@ pipeline {
         stage('Post Deployment Testing') {
             steps {
                 script {
-                    sh 'curl -I http://localhost:4433'
+                    sh 'curl -I http://localhost:4422'
                 }
             }
         }
