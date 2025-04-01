@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     sh 'docker build -t aakashgaur57/demoforjenkins .'
-                    withCredentials([usernamePassword(credentialsId: 'dcred', passwordVariable: 'docker_password', usernameVariable: 'docker_user')]) {
+                    withCredentials([usernamePassword(credentialsId: 'akdockercred', passwordVariable: 'docker_password', usernameVariable: 'docker_user')]) {
                         sh 'docker login -u $docker_user -p $docker_password'
                         sh 'docker push aakashgaur57/demoforjenkins'
                     }
